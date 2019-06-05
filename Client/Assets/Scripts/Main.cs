@@ -48,6 +48,7 @@ public class Main : MonoBehaviour
     void OnILRuntimeInitialized()
     {
 #if UNITY_EDITOR
+        // 启动调试服务
         appdomain.DebugService.StartDebugService(56000);
 #endif
 
