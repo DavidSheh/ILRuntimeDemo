@@ -23,10 +23,12 @@
 
 ### 新建 VS 项目 
 使用 vs 2017 新建一个 Hotfix 类库项目，设置如下图：
+
 ![](./Images/03_vs_new.png)
 
 ### 新建 libs 文件夹
  添加 Unity 相关的类库到 Hotfix 项目中。在 Hotfix 项目中新建一个 libs 文件夹，如下图：
+
 ![](./Images/04_vs_libs.png)
 
 ### 拷贝类库文件
@@ -36,6 +38,7 @@
 
 ### 添加类库
 为 Hotfix 添加类库引用，将 UnityEngine.dll 和 UnityEngine.UI.dll 两个类库添加到 Hotfix 项目，并将导入的类库属性设置成不拷贝到本地。如下图：
+
 ![](./Images/06_vs_add_libs_1.png)
 ![](./Images/06_vs_add_libs_2.png)
 
@@ -139,6 +142,7 @@ namespace Hotfix
 ## 热更新验证
 ### 制作 UI 预制体
 1. 创建一个 Button，并将 Canvas 重命名为 UIRoot，如下图：
+
 ![](./Images/09_ui.png)
 2. 在 Main.cs 脚本中添加 OnBtnClick() 方法的代码，将 Button 的点击时间绑定到 Main.cs 脚本的 OnBtnClick() 方法，代码如下：
 ```csharp
@@ -208,4 +212,5 @@ public static void ClickBtn()
 6. 编辑器中测试不报错后，将工程导出成 PC 平台的 exe。双击导出的 exe 文件，运行正常。然后修改 Hotfix 项目中的 UILogic.cs 类中的代码，如下图：
 ![](./Images/15_hotfix_code.png)
 7. 重新编译生成 dll，然后将生成的 Hotfix.dll 和 Hotfix.pdb 拷贝到导出 exe 的 ILRuntimeDemo_Data\StreamingAssets 目录下，然后再重新运行 exe，发现点击 Button 按钮后，不仅显示的文字变了，背景也变成红色的了，这样就实现了代码热更新。运行效果图如下：
+
 ![](./Images/16_result.png)
